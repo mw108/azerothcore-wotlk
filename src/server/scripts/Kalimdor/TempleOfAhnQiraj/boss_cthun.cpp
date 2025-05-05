@@ -203,15 +203,16 @@ struct boss_eye_of_cthun : public BossAI
 
     void ScheduleTask(bool onEngage = false)
     {
+        // Nerf - Wait 30s before first beam (was 3s before) so that bots can move into position.
         scheduler.
-            Schedule(3s, [this, onEngage](TaskContext task)
+            Schedule(30s, [this, onEngage](TaskContext task)
             {
                 if (task.GetRepeatCounter() < 3 && onEngage)
                 {
                     if (Unit* target = ObjectAccessor::GetUnit(*me, _beamTarget))
                         DoCast(target, SPELL_GREEN_BEAM);
 
-                    task.Repeat();
+                    task.Repeat(3s);
                 }
                 else
                 {
