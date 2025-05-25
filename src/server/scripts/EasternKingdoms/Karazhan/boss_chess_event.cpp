@@ -1566,7 +1566,7 @@ struct npc_chesspiece : public ScriptedAI
             {
                 charmer->RemoveAurasDueToSpell(SPELL_CONTROL_PIECE);
                 charmer->CastSpell(charmer, SPELL_GAME_IN_SESSION, true);
-                charmer->CastSpell(charmer, SPELL_RECENTLY_INGAME, true);
+                //charmer->CastSpell(charmer, SPELL_RECENTLY_INGAME, true);
                 charmer->NearTeleportTo(-11106.92f, -1843.32f, 229.626f, 4.2331f);
             }
 
