@@ -348,7 +348,7 @@ class spell_magtheridon_shadow_grasp_visual : public AuraScript
 
     void HandleDummyApply(AuraEffect const* /*aurEff*/, AuraEffectHandleModes /*mode*/)
     {
-        if (GetTarget()->GetAuraCount(SPELL_SHADOW_GRASP_VISUAL) == 5)
+        if (GetTarget()->GetAuraCount(SPELL_SHADOW_GRASP_VISUAL) == 1) // Only needs one player to banish Magtheridon instead of 5
         {
             GetTarget()->GetAI()->DoAction(ACTION_BANISH_SELF);
         }
