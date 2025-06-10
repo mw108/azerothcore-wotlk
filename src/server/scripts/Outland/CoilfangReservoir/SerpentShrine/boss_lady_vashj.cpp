@@ -204,10 +204,10 @@ struct boss_lady_vashj : public BossAI
         {
             DoCastSelf(SPELL_SUMMON_COILFANG_STRIDER, true);
             context.Repeat(60s);
-        }).Schedule(50s, [this](TaskContext context)
+        }).Schedule(25s, [this](TaskContext context)
         {
             DoCastSelf(SPELL_SUMMON_TAINTED_ELEMENTAL, true);
-            context.Repeat(50s);
+            context.Repeat(25s);
         }).Schedule(1s, [this](TaskContext context)
         {
             if (!me->HasAura(SPELL_MAGIC_BARRIER))
